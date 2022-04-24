@@ -35,12 +35,6 @@ public class JsonMap {
 
     }
 
-
-    /**
-     * 把json 转换为ArrayList 形式
-     *
-     * @return
-     */
     public static List<Map<String, Object>> getList(String jsonString) {
         List<Map<String, Object>> list = null;
         try {

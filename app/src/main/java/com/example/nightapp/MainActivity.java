@@ -34,23 +34,12 @@ public class MainActivity extends AppCompatActivity {
         String tradeResponse = trade_netClinet.sendGet(TRADE_URL);
         Log.i("***tradeResponse--->", tradeResponse);
         Map<String, Object> trademap = JsonMap.getMap(tradeResponse);
-        try {
-            List<List<Float>> listoftrade = JsonMap.convertJsonToListofList(trademap.get("data").toString());
-            Log.i("***listoftrade--->", listoftrade.toString());
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
 
         NetClinet mac_netClinet = new NetClinet();
         String macResponse = mac_netClinet.sendGet(MAC_URL);
         Log.i("***macResponse--->", macResponse);
         Map<String, Object> macmap = JsonMap.getMap(macResponse);
-        try {
-            List<List<Float>> listofmac = JsonMap.convertJsonToListofList(macmap.get("data").toString());
-            Log.i("***listofmac--->", listofmac.toString());
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+
 
         Trade trade = new Trade();
         trade.setUrl(TRADE_URL);
@@ -66,8 +55,4 @@ public class MainActivity extends AppCompatActivity {
         Log.i("***lllist--->", helper.convertTreadList(trade).toString());
 
     }
-
-
-
-
 }
